@@ -1,0 +1,11 @@
+*.project
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+.idea/
+/vendor
+composer.lock
+composer.phar
+phpunit.xml
+phpstan.neon
+/.cache/

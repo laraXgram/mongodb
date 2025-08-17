@@ -65,8 +65,8 @@
   "extra": {
     "laragram": {
       "providers": [
-        "LaraGram\\MongoDB\\MogoDBServiceProvider",
-        "LaraGram\\MongoDB\\MogoDBBusServiceProvider"
+        "LaraGram\\MongoDB\\MongoDBServiceProvider",
+        "LaraGram\\MongoDB\\MongoDBBusServiceProvider"
       ]
     }
   }

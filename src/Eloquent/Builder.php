@@ -338,25 +338,4 @@ class Builder extends EloquentBuilder
     {
         return $this->query->getConnection();
     }
-
-    /** @inheritdoc */
-    #[Override]
-    protected function ensureOrderForCursorPagination($shouldReverse = false)
-    {
-        if (empty($this->query->orders)) {
-            $this->enforceOrderBy();
-        }
-
-        if ($shouldReverse) {
-            $this->query->orders = collect($this->query->orders)
-                ->map(static fn (int $direction) => $direction === 1 ? -1 : 1)
-                ->toArray();
-        }
-
-        return collect($this->query->orders)
-            ->map(static fn ($direction, $column) => [
-                'column' => $column,
-                'direction' => $direction === 1 ? 'asc' : 'desc',
-            ])->values();
-    }
 }
